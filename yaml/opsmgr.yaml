@@ -1,0 +1,15 @@
+---
+apiVersion: mongodb.com/v1
+kind: MongoDBOpsManager
+metadata:
+  name: opsmgr
+spec:
+  replicas: 1
+  version: 4.2.1
+  adminCredentials: adminusercredentials
+  externalConnectivity:
+    type: NodePort  
+  applicationDatabase:
+    members: 3
+    version: 4.2.1
+    persistent: true

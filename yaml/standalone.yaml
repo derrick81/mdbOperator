@@ -1,0 +1,13 @@
+---
+apiVersion: mongodb.com/v1
+kind: MongoDB
+metadata:
+  name: mdb-standalone
+spec:
+  version: 4.2.2-ent
+  opsManager:
+    configMapRef:
+        name: projcm
+  credentials: operatorcreds
+  type: Standalone
+  persistent: true
