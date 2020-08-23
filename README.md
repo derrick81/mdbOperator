@@ -42,10 +42,10 @@ Once the Ops Manager deployment is completed in k8s, please log in with the Ops 
 * Identify the Ops Manager instance, org and proj which the MongoDB process will be associated to.\
 `kubectl create configmap projcm --from-literal="baseUrl=<FILL_IN_OPS_MGR_BASE_URL>" --from-literal="projectName=<FILL_IN_PROJECT_NAME>" --from-literal="orgId=<FILL_IN_24_CHARACTER_ORG_ID>`
 * Create standalone MongoDB\
-`k apply -f standalone.yaml`
+`kubectl apply -f standalone.yaml`
 * Use this to check for the status of the MongoDB setup.\
-`k get mdb mdb-standalone -o yaml -w`
+`kubectl get mdb mdb-standalone -o yaml -w`
 * Expose standalone MongoDB as NodePort service on port 30017. You may want to update this port number in the yaml file if it is already in use.\
-`k apply -f standalone-svc.yaml`
+`kubectl apply -f standalone-svc.yaml`
 
 
